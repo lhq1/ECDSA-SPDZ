@@ -1,1 +1,86 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T07:52:52.494Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" version="14.7.2" etag="CgkvMPjd9DRb7fp2iWRH" type="github"><diagram id="Pt-76VENaiz3KTVbtKUO">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-06-04T08:00:43.177Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="deMcNd5rs949gcY8DxnG" version="14.7.2" type="github">
+  <diagram id="Pt-76VENaiz3KTVbtKUO" name="Page-1">
+    <mxGraphModel dx="462" dy="705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qay90PagpXp00cPOU_Uc-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-3" target="qay90PagpXp00cPOU_Uc-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-3" value="\([a],[b],[c]\)" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="50" y="340" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-6" target="qay90PagpXp00cPOU_Uc-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-6" value="生成 \(t_i\)&lt;br style=&quot;font-size: 14px;&quot;&gt;广播得到 \(t\)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="490" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-8" target="qay90PagpXp00cPOU_Uc-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-8" value="部分打开 \(t[x]-[a]\)&lt;br style=&quot;font-size: 14px&quot;&gt;得到 \(f\)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="320" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-12" target="qay90PagpXp00cPOU_Uc-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-12" value="\(w=t[z]-([c]+e[a]+f[b]+e\cdot f\)&lt;br style=&quot;font-size: 14px&quot;&gt;广播得到\(w\)" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="45" y="452.5" width="225" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.017;entryY=0.385;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-17" target="qay90PagpXp00cPOU_Uc-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-36" value="是" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="qay90PagpXp00cPOU_Uc-35">
+          <mxGeometry x="-0.1869" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-17" target="qay90PagpXp00cPOU_Uc-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-38" value="否" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="qay90PagpXp00cPOU_Uc-37">
+          <mxGeometry x="0.325" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-17" value="\(w=0?\)" style="rhombus;whiteSpace=wrap;html=1;rounded=0;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="85" y="585" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-18" value="通过验证&lt;br style=&quot;font-size: 14px&quot;&gt;\(a\cdot b=c\)&lt;br style=&quot;font-size: 14px&quot;&gt;\(x\cdot y=z\)" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="330" y="552" width="120" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-19" value="验证失败&lt;br style=&quot;font-size: 14px;&quot;&gt;停止协议" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontFamily=Times New Roman;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="333.33" y="650" width="116.67" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-22" target="qay90PagpXp00cPOU_Uc-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-22" target="qay90PagpXp00cPOU_Uc-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-22" value="\([x]\)&lt;br&gt;\([y]\)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="347.5" width="90" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-24" target="qay90PagpXp00cPOU_Uc-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-24" value="部分打开\([x]-[a]\)&lt;br&gt;得到\(d\)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="306.67" y="287.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-25" target="qay90PagpXp00cPOU_Uc-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-25" value="部分打开\([y]-[b]\)&lt;br&gt;得到\(e\)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="306.67" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qay90PagpXp00cPOU_Uc-28" target="qay90PagpXp00cPOU_Uc-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qay90PagpXp00cPOU_Uc-28" value="\([z]=[c]+e[a]+d[b]+d\cdot e\)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="323" width="180" height="77" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

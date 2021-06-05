@@ -1,1 +1,34 @@
-<mxfile host="app.diagrams.net" modified="2021-06-05T10:44:25.804Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" version="14.7.2" etag="K1SBNWzdmeIIcby9_aVP" type="github"><diagram id="ljGMFIiCLJsVhlAJSuUc">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-06-05T13:05:48.392Z" agent="5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36" etag="sqsNF4jI3KeMtwdgXznR" version="14.7.2" type="github">
+  <diagram id="ljGMFIiCLJsVhlAJSuUc" name="第 1 页">
+    <mxGraphModel dx="946" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-1" value="baseOT" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="140" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-2" value="公钥密码" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="360" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-7" value="基于" style="shape=singleArrow;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="260" y="190" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-8" value="" style="shape=singleArrow;direction=south;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="170" y="250" width="60" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-9" value="OTExtension" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="140" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-10" value="" style="shape=singleArrow;direction=south;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="390" y="250" width="60" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-11" value="混合密码" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="360" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s46vchAOTC0BkB7GpJ7h-12" value="密码学工具(对称密码，哈希函数，伪随机数生成器等)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="200" y="260" width="220" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

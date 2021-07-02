@@ -81,6 +81,7 @@ class ComputePlayer(Player):
 
     def __init__(self, rec_port, ip='localhost'):
         super().__init__(rec_port, ip)
+        self.compute_no = ComputePlayer.ComputeNum
         ComputePlayer.ComputeList.append(self)
         ComputePlayer.ComputeNum += 1
         self.list_send = []
@@ -117,11 +118,23 @@ class ComputePlayer(Player):
     def set_broadcast(self, value):
         self.broadcast = value
 
+    def add_constant(self, constant, value):
+        print(self.compute_no)
+        if self.compute_no == 0:
+            return (value[0]+constant, value[1]+constant*self.alpha)
+        else:
+            return (value[0], value[1]+constant*self.alpha)
+
     def beaver_multiply_local(self, multiply_x_mask, multiply_y_mask, triple):
         a, b, c = triple
         n = Player.n
-        temp1 = (a[0] * multiply_y_mask + b[0] * multiply_x_mask + c[0] + multiply_y_mask * multiply_x_mask) % n
+
+        if self.compute_no == 0:
+            temp1 = (a[0] * multiply_y_mask + b[0] * multiply_x_mask + c[0] + multiply_y_mask * multiply_x_mask) % n
+        else:
+            temp1 = (a[0] * multiply_y_mask + b[0] * multiply_x_mask + c[0]) % n
         temp2 = (a[1] * multiply_y_mask + b[1] * multiply_x_mask + c[1] + multiply_y_mask * multiply_x_mask*self.alpha) % n
+
         self.product = (temp1, temp2)
         return self.product
 

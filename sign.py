@@ -199,6 +199,21 @@ def ecdsa_keygen(players):
     for p in players:
         p.private_key = p.share_values.pop()
         p.public_key = mulp(cp, cq, cn, g, p.private_key[0])
+        p.set_broadcast(p.public_key)
+    broadcast(players)
+    for p in players:
+        p.overall_public_key = add(cp,cq, cn, p.broadcast, p.other)
+
+
+def validate(sign, hash_message, overall_public_key):
+    cn, cp, cq, g, n = Player.cn, Player.cp, Player.cq, Player.g, Player.n
+    r, s = sign
+    s_inv = inv(s, n)
+
+    p1 = mulp(cp, cq, cn,g, (s_inv* hash_message)%n)
+    p2 = mulp(cp, cq, cn, overall_public_key, (s_inv * r)%n)
+    p = add(cp,cq,cn, p1, p2)
+    assert p[0] == r
 
 
 def ecdsa_sign(players,need_check=False):
@@ -238,6 +253,7 @@ def ecdsa_sign(players,need_check=False):
     open_share_with_mac(players)
     for p in players:
         p.sign = (p.r_open, p.open_value)
+    validate(players[0].sign, players[0].hash_message, players[0].overall_public_key)
         #print(p.sign)
 
 
@@ -272,16 +288,17 @@ def ecdsa_sign_parallel(players,need_check=False):
     open_share_with_mac(players)
     for p in players:
         p.sign = (p.r_open, p.open_value)
+    validate(players[0].sign, players[0].hash_message, players[0].overall_public_key)
         #print(p.sign)
 
 
 if __name__ == "__main__":
     a = InputPlayer(10000)
     b = TrustedThirdParty(20000)
-    c = ComputePlayer(21000)
-    d = ComputePlayer(31000)
+    c = ComputePlayer(24000)
+    d = ComputePlayer(34000)
 
-    times = 64
+    times = 16
     pattern = (0,1,2,3)
     a.set_message("hello world")
     b.generate_mac()

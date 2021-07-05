@@ -4,13 +4,6 @@ import socket
 from os import urandom
 import hashlib
 
-"""
-目前的问题：
-1. 由于python与c++的性能差异， 要不要用python来实现线上部分
-2. socket如何传输长数据以及列表
-3. 有限域上点的运算
-"""
-
 
 class Player():
     num_player = 0
@@ -109,11 +102,37 @@ class ComputePlayer(Player):
     def set_mac(self, mac_num):
         self.alpha = mac_num
 
+    def read_mac(self, file_name=None):
+        if not file_name:
+            file_name = 'mac_P{}.txt'.format(self.compute_no)
+        with open(file_name, 'r') as file:
+            self.alpha = eval(file.readline())
+
     def set_shares(self, shares):
         self.share_values = shares
 
+    def read_shares(self, file_name=None):
+        if not file_name:
+            file_name = 'mac_share_P{}.txt'.format(self.compute_no)
+        with open(file_name,'r') as file:
+            length = int(file.readline())
+            res = []
+            for i in range(length):
+                res.append(eval(file.readline()))
+            self.set_shares(res)
+
     def set_beaver_triples(self, triples):
         self.beaver_triples = triples
+
+    def read_beaver_triples(self, file_name=None):
+        if not file_name:
+            file_name = 'beaver_triple_P{}.txt'.format(self.compute_no)
+        with open(file_name,'r') as file:
+            length = int(file.readline())
+            res = []
+            for i in range(length):
+                res.append(eval(file.readline()))
+            self.set_beaver_triples(res)
 
     def set_broadcast(self, value):
         self.broadcast = value
@@ -161,13 +180,18 @@ class TrustedThirdParty(Player):
             shares[ComputePlayer.ComputeNum-1].append((i - sum) % Player.n)
         return shares
 
-    def generate_mac(self):
+    def generate_mac(self, method='memory'):
         self.mac_sum = self.randkey(Player.bits, Player.n)
         shares = self.calculate_share([self.mac_sum])
-        for i in range(ComputePlayer.ComputeNum):
-            ComputePlayer.ComputeList[i].set_mac(shares[i][0])
+        if method == 'memory':
+            for i in range(ComputePlayer.ComputeNum):
+                ComputePlayer.ComputeList[i].set_mac(shares[i][0])
+        elif method == 'file':
+            for i in range(ComputePlayer.ComputeNum):
+                with open('mac_P{}.txt'.format(i), 'w') as file:
+                    file.write(str(shares[i][0]))
 
-    def generate_mac_share(self, number):
+    def generate_mac_share(self, number, method='memory'):
         all_shares = [[] for _ in range(ComputePlayer.ComputeNum)]
         for i in range(number):
             num = self.randkey(Player.bits, Player.n)
@@ -177,10 +201,20 @@ class TrustedThirdParty(Player):
 
             for j in range(ComputePlayer.ComputeNum):
                 all_shares[j].append(tuple(shares[j]))
-        for i in range(ComputePlayer.ComputeNum):
-            ComputePlayer.ComputeList[i].set_shares(all_shares[i])
+        if method == 'memory':
+            for i in range(ComputePlayer.ComputeNum):
+                ComputePlayer.ComputeList[i].set_shares(all_shares[i])
+        elif method== 'file':
+            for i in range(ComputePlayer.ComputeNum):
+                with open('mac_share_P{}.txt'.format(i), 'w') as file:
+                    print(len(all_shares[i]))
+                    file.write(str(len(all_shares[i])))
+                    file.write('\n')
+                    for j in all_shares[i]:
+                        file.write(str(j))
+                        file.write('\n')
 
-    def generate_beaver_triples(self, number):
+    def generate_beaver_triples(self, number, method='memory'):
         n = Player.n
         all_shares = [[] for _ in range(ComputePlayer.ComputeNum)]
         for i in range(number):
@@ -194,8 +228,18 @@ class TrustedThirdParty(Player):
                 beaver_mac = tuple((shares[j][k], shares[j][k+3]) for k in range(3))
                 all_shares[j].append(beaver_mac)
                 #all_shares[j].append(tuple(shares[j][:3]))
-        for i in range(ComputePlayer.ComputeNum):
-            ComputePlayer.ComputeList[i].set_beaver_triples(all_shares[i])
+        if method == 'memory':
+            for i in range(ComputePlayer.ComputeNum):
+                ComputePlayer.ComputeList[i].set_beaver_triples(all_shares[i])
+        elif method == 'file':
+            for i in range(ComputePlayer.ComputeNum):
+                with open('beaver_triple_P{}.txt'.format(i), 'w') as file:
+                    print(len(all_shares[i]))
+                    file.write(str(len(all_shares[i])))
+                    file.write('\n')
+                    for j in all_shares[i]:
+                        file.write(str(j))
+                        file.write('\n')
 
 
 if __name__ == '__main__':
@@ -206,8 +250,10 @@ if __name__ == '__main__':
 
     a.set_message("hello world")
     b.generate_mac()
-    b.generate_mac_share(100)
-    b.generate_beaver_triples(100)
+    b.generate_mac_share(100, 'file')
+    c.read_shares()
+    b.generate_beaver_triples(100, 'file')
+    c.read_beaver_triples()
     print(c.alpha, c.hash_message,c.beaver_triples)
-    print(d.alpha, d.hash_message,d.share_values)
+    #print(d.alpha, d.hash_message,d.share_values)
     print(b.mac_sum, inv(b.mac_sum, Player.n))
